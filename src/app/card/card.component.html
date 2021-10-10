@@ -1,4 +1,4 @@
-<a (click)="Test(data.UniversityName)">
+<a (click)="Test(data.UniversityName)" routerLink = "/university/{{data.UniversityName}}">
 <div class="rounded-xl shadow-xl">
     <img class="w-full rounded-t-xl h-36 object-cover" [src]="data.UniversityimageUrl">
     <div class="p-6">

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-university',
@@ -6,22 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./university.component.scss']
 })
 export class UniversityComponent implements OnInit {
-  constructor() { }
+  constructor(private router :ActivatedRoute) { }
   uniName:any
 
   ngOnInit(): void {
-
+    console.log(this.router.snapshot.params)
     
   }
   public executeSelectedChange = (event) => {
     console.log(event);
   }
 
-  getUniName(uniNameValue){
-    console.log(uniNameValue)
-    this.uniName = uniNameValue;
-  }
-
+ 
  
 }
 

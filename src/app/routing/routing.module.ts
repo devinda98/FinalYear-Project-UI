@@ -10,8 +10,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'comparison', component: ComparisonComponent},
   {path: '', redirectTo: '/comparison', pathMatch: 'full'},
-  {path: 'university', component: UniversityComponent},
-  {path: '', redirectTo: '/university', pathMatch: 'full'},
+  {path: 'university/:name', component: UniversityComponent}
 
 ]
 

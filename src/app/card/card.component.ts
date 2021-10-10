@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
 
    Test(uniName){
     this.sendUniName.emit(uniName);
-   // console.log(uniName)
+    console.log(uniName)
    
   }
 
