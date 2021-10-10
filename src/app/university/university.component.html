@@ -1,0 +1,12 @@
+
+<mat-tab-group (selectedTabChange)="executeSelectedChange($event)" >
+    <mat-tab label="University Details" (sendUniName)="getUniName($event)"> 
+      <p>{{uniName}}</p>
+    </mat-tab>
+    <mat-tab label="Degree Programs">
+       <p>Degree Programs</p>
+      </mat-tab>
+    <mat-tab label="Job Oppertunities">
+       <p>Job Oppertunities</p>
+      </mat-tab>
+  </mat-tab-group>

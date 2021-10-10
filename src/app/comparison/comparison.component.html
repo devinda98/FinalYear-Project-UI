@@ -1,0 +1,45 @@
+<header class="gradient-color shadow rounded-xl">
+    <div class="max-w-max mx-auto py-5 px-4 sm:px-8 lg:px-4">
+        <h1 class="text-3xl font-black text-secondary-50">
+          Welcome to Comparison Tool
+        </h1>
+    </div>
+</header>
+<br><br>
+<mat-card>
+  <h1>Select A University</h1> <br><br>
+  <table width="100%"style="margin-left: 80px;">
+    <tr>
+      <td> 
+        <h4>Select 1st University</h4>
+      </td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Select University</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <h4>Select 2nd University</h4> 
+      </td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Select University</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+    <button mat-flat-button  color="primary">
+        Compare
+        <mat-icon>compare_arrows</mat-icon>
+    </button>
+    </mat-card>
+<br><br>
+<app-table *ngFor ="let university of universities" [data]="university"></app-table>

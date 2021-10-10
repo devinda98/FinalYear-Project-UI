@@ -1,0 +1,23 @@
+<section  fxLayout="column" fxFlexAlign="stretch"> 
+    
+    <div class="text-cyan-600" fxFlexAlign="center"> 
+        <p class="text-lg font-semibold">Welcome to the UNI-SELECT Platfrom </p> 
+    </div>
+
+    <p>We cam help you to select your future university life...</p> 
+
+    <div class="grid grid-cols-3 p-8 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" (click)="hideUni()"  *ngIf="show">
+        <app-card class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out" *ngFor ="let post of posts" [data]="post" (click)="Test(data.UniversityName)" ></app-card>
+     </div>
+</section>
+<mat-tab-group (selectedTabChange)="executeSelectedChange($event)" *ngIf="!show" >
+    <mat-tab label="University Details"> 
+      <p>{{uniName}}</p>
+    </mat-tab>
+    <mat-tab label="Degree Programs">
+       <p>Degree Programs</p>
+      </mat-tab>
+    <mat-tab label="Job Oppertunities">
+       <p>Job Oppertunities</p>
+      </mat-tab>
+  </mat-tab-group>
