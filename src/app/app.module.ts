@@ -34,6 +34,7 @@ import { CardComponent } from './card/card.component';
 import { ComparisonComponent } from './comparison/comparison.component';
 import { TableComponent } from './table/table.component';
 import { UniversityComponent } from './university/university.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { UniversityComponent } from './university/university.component';
     MatTabsModule,
     MatMenuModule,
     MaterialModule,
+    HttpClientModule
 
 
   ],

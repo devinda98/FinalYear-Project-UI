@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { UniData } from '../model/unidata';
 
 @Component({
   selector: 'app-card',
@@ -15,16 +16,5 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-   Test(uniName){
-    this.sendUniName.emit(uniName);
-    console.log(uniName)
-   
-  }
+}
 
-}
-export interface UniData{
-  UniversityName: string;
-  UniversityRank: string;
-  UniversityimageUrl: string;
-  location: string;
-}
