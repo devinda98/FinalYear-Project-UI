@@ -1,0 +1,104 @@
+<header class="gradient-color shadow rounded-xl">
+  <div class="max-w-max mx-auto py-5 px-4 sm:px-8 lg:px-4">
+      <h1 class="text-3xl font-black text-secondary-50">
+        Welcome to University Prediction Tool
+      </h1>
+  </div>
+</header>
+<br>
+
+<mat-vertical-stepper #stepper linear>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Mention The Area That You Need To Study</ng-template>
+        <mat-radio-group formControlName="firstCtrl" aria-label="Select an option">
+          <mat-radio-button value="1">Business Studies</mat-radio-button> <br> <br>
+          <mat-radio-button value="2">Information Technology</mat-radio-button> <br> <br>
+          <mat-radio-button value="3">Engineering</mat-radio-button> <br> <br>
+          <mat-radio-button value="4">Scince</mat-radio-button> <br> <br>
+          <mat-radio-button value="5">Law</mat-radio-button> <br> <br>
+        </mat-radio-group>        
+      <div>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Please Select The Degree Type">
+    <form [formGroup]="secondFormGroup">
+      <mat-radio-group formControlName="secondCtrl" aria-label="Select an option">
+        <mat-radio-button value="1">Undergraduate</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">Post Graduate</mat-radio-button> <br> <br>
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label="Please Select A Degree You Wish To Study">
+    <form [formGroup]="thirdFormGroup">
+      <mat-radio-group formControlName="thirdCtrl" aria-label="Select an option">
+        <mat-radio-button value="1">BSc in Software Engineering</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">BSc in Management Information Systems</mat-radio-button> <br> <br>
+        <mat-radio-button value="3">BSc in Network Engineering</mat-radio-button> <br> <br>
+        <mat-radio-button value="4">BSc in Computer Scince</mat-radio-button> <br> <br>
+        <mat-radio-button value="5">BSc in Cyber Security</mat-radio-button> <br> <br>
+        <mat-radio-button value="6">BSc in Information Technology</mat-radio-button> <br> <br>
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fourthFormGroup" label="Please Select Subjects You Like To Study">
+    <form [formGroup]="fourthFormGroup">
+      <section class="example-section" >
+        <mat-checkbox formControlName="fourthCtrl" class="example-margin">Programing Languages</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="fourthCtrl" class="example-margin">Mathematics </mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="fourthCtrl" class="example-margin">IOT</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="fourthCtrl" class="example-margin">System Analysis and Designing</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="fourthCtrl" class="example-margin">Algorithem and Structures</mat-checkbox> <br> <br>
+      </section>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fifthFormGroup" label="Do You Wish To Study A Foreign Degree Program? ">
+    <form [formGroup]="fifthFormGroup">
+      <mat-radio-group formControlName="fifthCtrl" aria-label="Select an option">
+        <mat-radio-button value="1">Yes</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">No</mat-radio-button> <br> <br>
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="sixthFormGroup" label="Select A Degree Price Range">
+    <form [formGroup]="sixthFormGroup">
+      <mat-radio-group formControlName="sixthCtrl" aria-label="Select an option">
+        <mat-radio-button value="1">less than 15 Laks</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">15 - 20 Laks</mat-radio-button> <br> <br>
+        <mat-radio-button value="1">20 - 25 Laks</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">more than 25 Laks</mat-radio-button> <br> <br>
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

@@ -20,6 +20,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import {MatRadioModule} from '@angular/material/radio'; 
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +37,7 @@ import { ComparisonComponent } from './comparison/comparison.component';
 import { TableComponent } from './table/table.component';
 import { UniversityComponent } from './university/university.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PredictionComponent } from './prediction/prediction.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     ComparisonComponent,
     TableComponent,
     UniversityComponent,
+    PredictionComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatMenuModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule
+
 
 
   ],
