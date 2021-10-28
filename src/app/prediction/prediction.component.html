@@ -82,9 +82,39 @@
     <form [formGroup]="sixthFormGroup">
       <mat-radio-group formControlName="sixthCtrl" aria-label="Select an option">
         <mat-radio-button value="1">less than 15 Laks</mat-radio-button> <br> <br>
-        <mat-radio-button value="2">15 - 20 Laks</mat-radio-button> <br> <br>
-        <mat-radio-button value="1">20 - 25 Laks</mat-radio-button> <br> <br>
-        <mat-radio-button value="2">more than 25 Laks</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">15 - 25 Laks</mat-radio-button> <br> <br>
+        <mat-radio-button value="3">more than 25 Laks</mat-radio-button> <br> <br>
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="seventhFormGroup" label="What are the facilities that you expect from a University">
+    <form [formGroup]="seventhFormGroup">
+      <section class="example-section" >
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Hostal Availability</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Gym </mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Swmming Pool</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Computer labs</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Study Areas</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Library</mat-checkbox> <br> <br>
+        <mat-checkbox formControlName="seventhCtrl" class="example-margin">Cafetarias</mat-checkbox> <br> <br>
+      </section>
+      <div>
+        <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
+        <button mat-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="eighthFormGroup" label="Select Transportation Method You Like To Have">
+    <form [formGroup]="eighthFormGroup">
+      <mat-radio-group formControlName="eighthCtrl" aria-label="Select an option">
+        <mat-radio-button value="1">Public Transportation</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">University Transport Service</mat-radio-button> <br> <br>
+        <mat-radio-button value="3">Private Transportation</mat-radio-button> <br> <br>
+        <mat-radio-button value="4">Transportation Not Needed</mat-radio-button> <br> <br>
       </mat-radio-group>
       <div>
         <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
@@ -95,10 +125,13 @@
 
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <p>1. I accept the details that provided true and please click on "Next" to see your prediction results.</p> <br>
+    <p>2. If you need to update any details you provided feel free to go back through the steps and update details.</p><br>
+    <p>3. If you want start the prediction from the begining please click on "Reset".</p><br>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button matStepperPrevious>Next</button>
     </div>
   </mat-step>
 </mat-vertical-stepper>
