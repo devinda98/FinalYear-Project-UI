@@ -66,15 +66,15 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fifthFormGroup" label="Do You Wish To Study A Foreign Degree Program? ">
+  <mat-step [stepControl]="fifthFormGroup" label="What Is The Domain Of Your Degree Program That You Wish To Study? ">
     <form [formGroup]="fifthFormGroup">
       <mat-radio-group formControlName="fifthCtrl" aria-label="Select an option">
-        <mat-radio-button value="1">Yes</mat-radio-button> <br> <br>
-        <mat-radio-button value="2">No</mat-radio-button> <br> <br>
+        <mat-radio-button value="1">Local</mat-radio-button> <br> <br>
+        <mat-radio-button value="2">Foreign</mat-radio-button> <br> <br>
       </mat-radio-group>
       <div>
         <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
-        <button mat-button matStepperNext color="primary">Next</button>
+        <button mat-button matStepperNext color="primary" (click)="openDialogFailed()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -87,7 +87,7 @@
       </mat-radio-group>
       <div>
         <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
-        <button mat-button matStepperNext color="primary">Next</button>
+        <button mat-button matStepperNext color="primary" (click)="openDialogFailed()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -104,7 +104,7 @@
       </section>
       <div>
         <button mat-button matStepperPrevious color="text-secondary-50">Back</button>
-        <button mat-button matStepperNext color="primary">Next</button>
+        <button mat-button matStepperNext color="primary" (click)="openDialogFailed()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -131,7 +131,7 @@
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button matStepperPrevious>Next</button>
+      <button mat-button routerLink="/result">Next</button>
     </div>
   </mat-step>
 </mat-vertical-stepper>

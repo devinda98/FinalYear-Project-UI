@@ -38,6 +38,8 @@ import { TableComponent } from './table/table.component';
 import { UniversityComponent } from './university/university.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PredictionComponent } from './prediction/prediction.component';
+import { PredictionResultComponent } from './prediction-result/prediction-result.component';
+import { PredictionErrorComponent } from './prediction-error/prediction-error.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { PredictionComponent } from './prediction/prediction.component';
     TableComponent,
     UniversityComponent,
     PredictionComponent,
+    PredictionResultComponent,
+    PredictionErrorComponent,
   ],
   imports: [
     BrowserModule,

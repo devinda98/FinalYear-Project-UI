@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { ComparisonComponent } from '../comparison/comparison.component';
 import { UniversityComponent } from '../university/university.component';
 import { PredictionComponent } from '../prediction/prediction.component';
+import { PredictionResultComponent } from '../prediction-result/prediction-result.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,6 +15,8 @@ const routes: Routes = [
   {path: 'university/:name', component: UniversityComponent},
   {path: 'prediction', component: PredictionComponent},
   {path: '', redirectTo: '/prediction', pathMatch: 'full'},
+  {path: 'result', component: PredictionResultComponent},
+  {path: '', redirectTo: '/result', pathMatch: 'full'},
 
 ]
 

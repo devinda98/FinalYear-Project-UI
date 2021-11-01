@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { PredictionErrorComponent } from '../prediction-error/prediction-error.component';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class PredictionComponent implements OnInit {
   eighthFormGroup: FormGroup;
   ninethFormGroup: FormGroup;
   tenthFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder) { 
+  constructor(private _formBuilder: FormBuilder, private dialog: MatDialog) { 
     // this.firstFormGroup = this._formBuilder.group({
     //   firstCtrl: ['1']
     // })
@@ -56,5 +58,13 @@ export class PredictionComponent implements OnInit {
       tenthCtrl: [null, Validators.required]
     });
   }
+
+  openDialogFailed(): void {
+    this.dialog.open(PredictionErrorComponent, {
+      width: '40%',
+      data: "failure",
+    });
+  }
+  
 
 }

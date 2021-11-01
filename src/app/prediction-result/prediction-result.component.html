@@ -1,0 +1,12 @@
+<header class="gradient-color shadow rounded-xl">
+    <div class="max-w-max mx-auto py-5 px-4 sm:px-8 lg:px-4">
+        <h1 class="text-3xl font-black text-secondary-800">
+          Results For Your Details....
+        </h1>
+    </div>
+  </header>
+  <br>
+<div class="grid grid-cols-3 p-8 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+    <app-card class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out" *ngFor ="let post of posts" [data]="post" ></app-card>
+ </div>
+
