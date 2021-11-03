@@ -10,10 +10,10 @@
     </a>
     <mat-list-item [matMenuTriggerFor]="menu">
         <mat-icon>unfold_more</mat-icon>
-        <a matline>Example</a>
+        <a matline>More options</a>
     </mat-list-item>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+     <a href="http://localhost:3000/"> <button mat-menu-item (click)="onSidenavClose()">Connect With Universities</button> </a>
       <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
     </mat-menu>
 </mat-nav-list>

@@ -1,7 +1,53 @@
 
 <mat-tab-group (selectedTabChange)="executeSelectedChange($event)" >
     <mat-tab label="University Details"> 
-      <p>{{data}}</p>
+      <br>
+      <mat-card class="background">
+        <mat-card-title style="text-align: center; color: aliceblue;"><h2>NSBM Green University</h2></mat-card-title>
+      </mat-card>
+      <mat-card>
+        <img src="https://www.nsbm.ac.lk/wp-content/uploads/2019/09/sofnsbm_bg.png" style="width: 100%;">
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title class="textColor" style="text-align: start;"><h2>Overview</h2></mat-card-title>
+        <mat-card-content>
+          <p style="text-align: center;">
+            NSBM Green University is the first of its kind in South Asia. We offer undergraduate and postgraduate programmes in the fields of Business, Computing, Engineering, Design and Science in an alternative and innovative approach to higher education. We have designed our world-class degree programmes integrating leadership, ethics, global thinking, core management skills and leading-edge technological innovations. NSBM is established under the State Ministry of Skills Development, Vocational Education, Research & Innovations as a fully Government owned institution.
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title class="textColor" style="text-align: start;"><h2>Discription</h2></mat-card-title>
+        <mat-list>
+          <mat-list-item *ngFor="let message of messages">
+            <img matListAvatar [src]="message.img_url">
+            <p matLine>
+              <span class="textColor"> {{message.subject}} </span> <br>
+              <span class="demo-2">{{message.content}} </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+        
+      </mat-card>
+      <mat-card>
+        <mat-card-title class="textColor" style="text-align: start;"><h2>Facilities</h2></mat-card-title>
+        <mat-card-content>
+          <p style="text-align: center;">
+            NSBM Equipped with latest facilities that university can give for the student that can make student's university life better. Facilities like Library, Swimming Pool, Computer labs, Student Accomadations, Indoor Playground, Gym are some of key facilities that NSBM provide to the students.
+          </p>
+        </mat-card-content>
+        <div style="width: 80%; height: 400px; text-align:center; margin-left: auto; margin-right: auto; padding:0;">
+          <ng-image-slider #nav
+            [images]="imageObject"
+            [infinite]="false"
+            [autoSlide]="1"
+            [imageSize]="{width: '60%', height: 400}"
+            slideImage="1"></ng-image-slider>
+        </div>
+      </mat-card>
+
+
     </mat-tab>
     <mat-tab label="Degree Programs">
        <p>Degree Programs</p>

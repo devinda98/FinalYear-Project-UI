@@ -22,6 +22,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import {MatRadioModule} from '@angular/material/radio'; 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,7 +86,8 @@ import { PredictionErrorComponent } from './prediction-error/prediction-error.co
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    NgImageSliderModule
 
 
 
