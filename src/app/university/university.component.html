@@ -8,7 +8,7 @@
       <mat-card>
         <img src="https://www.nsbm.ac.lk/wp-content/uploads/2019/09/sofnsbm_bg.png" style="width: 100%;">
       </mat-card>
-
+      <br>
       <mat-card>
         <mat-card-title class="textColor" style="text-align: start;"><h2>Overview</h2></mat-card-title>
         <mat-card-content>
@@ -17,19 +17,21 @@
           </p>
         </mat-card-content>
       </mat-card>
+      <br>
       <mat-card>
         <mat-card-title class="textColor" style="text-align: start;"><h2>Discription</h2></mat-card-title>
         <mat-list>
-          <mat-list-item *ngFor="let message of messages">
-            <img matListAvatar [src]="message.img_url">
+          <mat-list-item *ngFor="let description of descriptions">
+            <img matListAvatar [src]="description.img_url">
             <p matLine>
-              <span class="textColor"> {{message.subject}} </span> <br>
-              <span class="demo-2">{{message.content}} </span>
+              <span class="textColor"> {{description.subject}} </span> <br>
+              <span class="demo-2">{{description.content}} </span>
             </p>
           </mat-list-item>
         </mat-list>
         
       </mat-card>
+      <br>
       <mat-card>
         <mat-card-title class="textColor" style="text-align: start;"><h2>Facilities</h2></mat-card-title>
         <mat-card-content>
@@ -46,13 +48,122 @@
             slideImage="1"></ng-image-slider>
         </div>
       </mat-card>
-
-
+      <br>
+<!-- Degree Programs -->
     </mat-tab>
     <mat-tab label="Degree Programs">
-       <p>Degree Programs</p>
+      <mat-card class="background">
+        <mat-card-title style="text-align: center; color: aliceblue;"><h2>Degree Programs</h2></mat-card-title>
+      </mat-card>
+      <br>
+      <mat-tab-group (selectedTabChange)="executeSelectedChange($event)" >
+        <mat-tab label="Undergraduate Studies">
+          <mat-horizontal-stepper #stepper>  
+          <mat-step [stepControl]="secondFormGroup" label="Management Degrees">
+            <form [formGroup]="secondFormGroup">
+              <mat-list>
+                <mat-list-item *ngFor="let degree of managementdegreeData">
+                  <mat-icon class="white-icon" matListIcon>school</mat-icon>
+                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                </mat-list-item>
+              </mat-list>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Computing Degrees">
+            <form [formGroup]="secondFormGroup">
+              <mat-list>
+                <mat-list-item *ngFor="let degree of computingdegreeData">
+                  <mat-icon class="white-icon" matListIcon>school</mat-icon>
+                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                </mat-list-item>
+              </mat-list>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Engineering Degrees">
+            <form [formGroup]="secondFormGroup">
+              <mat-list>
+                <mat-list-item *ngFor="let degree of engineeringdegreeData">
+                  <mat-icon class="white-icon" matListIcon>school</mat-icon>
+                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                </mat-list-item>
+              </mat-list>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Bio Science Degrees">
+            <form [formGroup]="secondFormGroup">
+              <mat-list>
+                <mat-list-item *ngFor="let degree of biodegreeData">
+                  <mat-icon class="white-icon" matListIcon>school</mat-icon>
+                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                </mat-list-item>
+              </mat-list>
+            </form>
+          </mat-step>
+          </mat-horizontal-stepper>
+        </mat-tab>
+        <mat-tab label="Postgraduate Studies">
+          <mat-list>
+            <mat-list-item *ngFor="let degree of postgradDegreeData">
+              <mat-icon class="white-icon" matListIcon>school</mat-icon>
+              <h3 matLine style="text-align: start;"> {{degree}} </h3>
+            </mat-list-item>
+          </mat-list>
+        </mat-tab>
+      </mat-tab-group>
       </mat-tab>
+
+<!-- Job Oppertunities -->
     <mat-tab label="Job Oppertunities">
-       <p>Job Oppertunities</p>
+     <mat-card class="background">
+        <mat-card-title style="text-align: center; color: aliceblue;"><h2>Job Oppertunities</h2></mat-card-title>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+  <mat-horizontal-stepper #stepper>     
+    <mat-step [stepControl]="secondFormGroup" class="textColor" label="Management Job Oppertunities">
+    <form [formGroup]="secondFormGroup">
+      <mat-list>
+        <mat-list-item *ngFor="let job of managementJobs;">
+          <mat-icon class="white-icon" matListIcon>work</mat-icon>
+          <h3 matLine style="text-align: start;"> {{job}} </h3>
+        </mat-list-item>
+      </mat-list>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Computing Job Oppertunities">
+    <form [formGroup]="secondFormGroup">
+      <mat-list>
+        <mat-list-item *ngFor="let job of computingJobs">
+          <mat-icon class="white-icon" matListIcon>work</mat-icon>
+          <h3 matLine style="text-align: start;"> {{job}} </h3>
+        </mat-list-item>
+      </mat-list>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" class="textColor" label="Engineering Job Oppertunities">
+    <form [formGroup]="secondFormGroup">
+      <mat-list>
+        <mat-list-item *ngFor="let job of engJobs">
+          <mat-icon class="white-icon" matListIcon>work</mat-icon>
+          <h3 matLine style="text-align: start;"> {{job}} </h3>
+        </mat-list-item>
+      </mat-list>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" class="textColor" label="Bio Medical Science Job Oppertunities">
+    <form [formGroup]="secondFormGroup">
+      <mat-list>
+        <mat-list-item *ngFor="let job of bioMedJobs">
+          <mat-icon class="white-icon" matListIcon>work</mat-icon>
+          <h3 matLine style="text-align: start;"> {{job}} </h3>
+        </mat-list-item>
+      </mat-list>
+    </form>
+  </mat-step>
+  </mat-horizontal-stepper>
+        </mat-card-content>
+      </mat-card>
+
       </mat-tab>
+
   </mat-tab-group>

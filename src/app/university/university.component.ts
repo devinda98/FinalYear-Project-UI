@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,12 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./university.component.scss']
 })
 export class UniversityComponent implements OnInit {
-  constructor(private router :ActivatedRoute) { }
+  secondFormGroup: any;
+  constructor(private router :ActivatedRoute, private _formBuilder: FormBuilder) { }
   uniName:any
   data:any
 
 
   ngOnInit(): void {
+
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: [null, Validators.required]
+    });
+    
     console.log(this.router.snapshot.params)
     this.data= this.router.snapshot.params.name;
     console.log(this.data)
@@ -20,7 +27,9 @@ export class UniversityComponent implements OnInit {
   public executeSelectedChange = (event) => {
     console.log(event);
   }
-  messages: messageData []= [
+
+  //Description data
+  descriptions: messageData []= [
     {
       img_url : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9A5n1J-Wsty7oe_EXEnNfv2ErFZWNmwmyUGg9l27wawSIh4kon1VdY2oAw_b4_Hj7FcM&usqp=CAU",
       subject : "Globle Rank",
@@ -48,6 +57,7 @@ export class UniversityComponent implements OnInit {
     },
   ]
 
+  //Facility data
   imageObject = [{
     image: 'https://www.nsbm.ac.lk/wp-content/uploads/2019/09/nsbm-facilities-library.jpg',
     thumbImage: 'https://www.nsbm.ac.lk/wp-content/uploads/2019/09/nsbm-facilities-library.jpg',
@@ -61,6 +71,11 @@ export class UniversityComponent implements OnInit {
   image: 'https://mylife84446.files.wordpress.com/2017/09/gym.jpg?w=736&h=510',
   thumbImage: 'https://mylife84446.files.wordpress.com/2017/09/gym.jpg?w=736&h=510',
   title: 'Gym'
+},
+{
+  image: 'https://www.nsbm.ac.lk/wp-content/uploads/2019/09/sportsclub_bg.jpg',
+  thumbImage: 'https://www.nsbm.ac.lk/wp-content/uploads/2019/09/sportsclub_bg.jpg',
+  title: 'Sports and Clubs'
 },
 {
   image: 'https://www.maga.lk/wp-content/uploads/2018/03/DSC_4820.jpg',
@@ -81,14 +96,103 @@ export class UniversityComponent implements OnInit {
 
 ]
 
- 
- 
+//JOB data
+managementJobs=["Professional Accountants","Auditors","General Business Managers",
+"Travel companies and Tour operators",
+"Hotels and Resorts Management",
+"Event Management",
+"The Airline", "Railway Travel Cruise Companies", "Passenger Services",
+"Conferences and Conventions Centers",
+"Tourist Offices and Ministries of Tourism",
+"Food and Beverage Management",
+"Concert and Theatre Venues",
+"Museums and other Cultural Venues"
+]
+
+computingJobs=["Software Engineers",
+"QA Engineers",
+"UI/UX Developer", 
+"UI Engineer", 
+"System Support Engineer",
+"Web Design",
+"IT Management Interns", 
+"Project managers"]
+
+engJobs=["Electrical Engineering",
+  "Electronics Engineering",
+  "Electronic & Telecommunication Engineering",
+  "Power Generation Engineering",
+  "Power Distribution Engineering",
+  "Robotics and Industrial Automation Engineering",
+  "Embedded System & Hardware Engineering",
+  "Control System Design Engineering",
+  "Network Design Engineering",
+  "Bio Medical Instrumentation", "Design Engineer"]
+
+bioMedJobs = [
+  "Biomedical scientist",
+  "Healthcare scientist ",
+  "Employment at large pharmaceutical companies ",
+
+]
+//DegreePrograms
+managementdegreeData=[
+ "BSc (Hons) Operations and Logistics Management - (Plymouth University - United Kingdom)", 
+ "BSc in Business Management (Industrial Management) (Special) - (UGC Approved - Offered By NSBM)",
+ "BSc in Business Management (Project Management) (Special) - (UGC Approved - Offered By NSBM)",
+ "BSc in Business Management (Logistics Management) (Special) - (UGC Approved - Offered By NSBM)",
+ "BBM (Hons) Tourism, Hospitality & Events - (UGC Approved - Offered By NSBM)",
+ "BSc (Hons) Events, Tourism and Hospitality Management - (Plymouth University - United Kingdom)",
+ "BSc (Hons) Marketing Management - (Plymouth University - United Kingdom)",
+ "BSc (Hons) Accounting and Finance - (Plymouth University - United Kingdom)",
+ "Bachelor of Business: Banking and Finance & Financial Risk Management - (Victoria University - Australia)",
+ "BM (Hons) in Accounting and Finance - (UGC Approved - Offered By NSBM)", 
+ "BSc (Hons) Business Communication - (Plymouth University - United Kingdom)",
+ "BSc (Hons) International Management and Business - (Plymouth University - United Kingdom)",
+ "BA in Business Communication - (UGC Approved - Offered By NSBM)",
+ "BM (Hons) in International Business - (UGC Approved - Offered By NSBM)",
+ "Bachelor of Business: Management and Innovation & Supply Chain and Logistics Management - (Victoria University - Australia)",
+ "BSc in Business Management (Human Resource Management) (Special) - (UGC Approved - Offered By NSBM)"
+]
+computingdegreeData=[
+ "BSc (Honours) in Data Science - (UGC Approved - Offered By NSBM)",
+ "BSc (Hons) Computer Networks - (Plymouth University - United Kingdom)",
+ "BSc (Hons) Computer Security - (Plymouth University - United Kingdom)",
+ "BSc (Hons) in Computer Networks - (UGC Approved - Offered By NSBM)", 
+ "BSc (Hons) Computer Science - (Plymouth University - United Kingdom)",
+ "BSc (Hons) Software Engineering - (Plymouth University - United Kingdom)",
+ "Bachelor of Information Technology (NBIT): Major in Web and Mobile Application Development - (Victoria University - Australia)",
+ "BSc (Hons) in Computer Science - (UGC Approved - Offered By NSBM)",
+ "BSc (Hons) in Software Engineering - (UGC Approved - Offered By NSBM)", 
+ "BSc in Management Information Systems (Special) - (UGC Approved - Offered By NSBM)" 
+]
+engineeringdegreeData=[
+  "Bachelor of Science Engineering Honours in Electrical and Electronic Engineering - (UGC Approved - Offered By NSBM)",
+  "Bachelor of Science Engineering Honours in Computer System Engineering - (UGC Approved - Offered By NSBM)",
+  "Bachelor of Science Engineering Honours in Mechatronic Engineering - (UGC Approved - Offered By NSBM)", 
+  "Bachelor of Science (Hons) Quantity Surveying - (Plymouth University - United Kingdom)",
+  "Bachelor of Interior Design - (UGC Approved - Offered By NSBM)",
+  "BSc in Multimedia - (UGC Approved - Offered By NSBM)",
+  "BA (Hons) in Interior Design - (Plymouth University - United Kingdom) "
+]
+biodegreeData=[
+  "BSc (Honours) in Biomedical Science - (UGC Approved - Offered By NSBM)",
+  "BSc (Honours) Public Health and Nutrition - (UGC Approved - Offered By NSBM)"
+] 
+postgradDegreeData=[
+  "Postgraduate Diploma in Project Management",
+  "Postgraduate Diploma In Industrial Management",
+  "Postgraduate Diploma in Software Engineering",
+  "Postgraduate Diploma in Computer Networks",
+  "Postgraduate Diploma In Human Resource Management",
+  "Postgraduate Diploma In Business Management",
+  "Master of Business Studies (MBS) and Master of Business Administration (MBA) "
+]
 }
 
 export class messageData{
   img_url: String
   subject: String
   content: String
-
-
 }
+
