@@ -8,12 +8,7 @@
     <a mat-list-item routerLink="/prediction" (click)="onSidenavClose()">
         <mat-icon>find_in_page</mat-icon><span class="nav-caption">Prediction System</span>
     </a>
-    <mat-list-item [matMenuTriggerFor]="menu">
-        <mat-icon>unfold_more</mat-icon>
-        <a matline>More options</a>
-    </mat-list-item>
-    <mat-menu #menu="matMenu">
-     <a href="http://localhost:3000/"> <button mat-menu-item (click)="onSidenavClose()">Connect With Universities</button> </a>
-      <button routerLink="/result" mat-menu-item (click)="onSidenavClose()">Add contact</button>
-    </mat-menu>
+    <a mat-list-item href="http://localhost:3000/" (click)="onSidenavClose()">
+        <mat-icon>announcement</mat-icon><span class="nav-caption"> Connect With Universities</span>
+    </a> 
 </mat-nav-list>
