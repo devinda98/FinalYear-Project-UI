@@ -62,9 +62,9 @@
           <mat-step [stepControl]="secondFormGroup" label="Management Degrees">
             <form [formGroup]="secondFormGroup">
               <mat-list>
-                <mat-list-item *ngFor="let degree of managementdegreeData">
+                <mat-list-item routerLink = "/degree/{{degree}}" *ngFor="let degree of managementdegreeData">
                   <mat-icon class="white-icon" matListIcon>school</mat-icon>
-                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                  <h3 class="degreeclass" matLine style="text-align: start;"> {{degree}} </h3>
                 </mat-list-item>
               </mat-list>
             </form>
@@ -72,9 +72,9 @@
           <mat-step [stepControl]="secondFormGroup" label="Computing Degrees">
             <form [formGroup]="secondFormGroup">
               <mat-list>
-                <mat-list-item *ngFor="let degree of computingdegreeData">
+                <mat-list-item routerLink = "/degree/{{degree}}" *ngFor="let degree of computingdegreeData">
                   <mat-icon class="white-icon" matListIcon>school</mat-icon>
-                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                  <h3 class="degreeclass" matLine style="text-align: start;"> {{degree}} </h3>
                 </mat-list-item>
               </mat-list>
             </form>
@@ -82,9 +82,9 @@
           <mat-step [stepControl]="secondFormGroup" label="Engineering Degrees">
             <form [formGroup]="secondFormGroup">
               <mat-list>
-                <mat-list-item *ngFor="let degree of engineeringdegreeData">
+                <mat-list-item routerLink = "/degree/{{degree}}" *ngFor="let degree of engineeringdegreeData">
                   <mat-icon class="white-icon" matListIcon>school</mat-icon>
-                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                  <h3 class="degreeclass" matLine style="text-align: start;"> {{degree}} </h3>
                 </mat-list-item>
               </mat-list>
             </form>
@@ -92,9 +92,9 @@
           <mat-step [stepControl]="secondFormGroup" label="Bio Science Degrees">
             <form [formGroup]="secondFormGroup">
               <mat-list>
-                <mat-list-item *ngFor="let degree of biodegreeData">
+                <mat-list-item routerLink = "/degree/{{degree}}" *ngFor="let degree of biodegreeData">
                   <mat-icon class="white-icon" matListIcon>school</mat-icon>
-                  <h3 matLine style="text-align: start;"> {{degree}} </h3>
+                  <h3 class="degreeclass" matLine style="text-align: start;"> {{degree}} </h3>
                 </mat-list-item>
               </mat-list>
             </form>
@@ -103,9 +103,9 @@
         </mat-tab>
         <mat-tab label="Postgraduate Studies">
           <mat-list>
-            <mat-list-item *ngFor="let degree of postgradDegreeData">
+            <mat-list-item routerLink = "/degree/{{degree}}" *ngFor="let degree of postgradDegreeData">
               <mat-icon class="white-icon" matListIcon>school</mat-icon>
-              <h3 matLine style="text-align: start;"> {{degree}} </h3>
+              <h3 class="degreeclass" matLine style="text-align: start;"> {{degree}} </h3>
             </mat-list-item>
           </mat-list>
         </mat-tab>

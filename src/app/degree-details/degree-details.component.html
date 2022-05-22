@@ -1,0 +1,26 @@
+<mat-card class="background">
+    <mat-card-title style="text-align: center; color: aliceblue;"><h2>{{data}}</h2></mat-card-title>
+  </mat-card>
+  <br>
+  <mat-card>
+    <mat-card-title class="textColor" style="text-align: start;"><h2>Overview</h2></mat-card-title>
+    <mat-card-content>
+      <p style="text-align: center;">
+        NSBM Green University town is a UGC approved degree-awarding institution strives to create the perfect environment for its students to mould them to be global individuals who are both team leaders and team players. BSc in Management Information Systems (Special) programme at NSBM School of Computing is a carefully designed interdisciplinary program focusing on both computing and business aspect. The MIS graduate aims to leverage technology, people and processes to improve an organisation’s operational efficiency and to make substantive contributions to the use of information systems in corporate decision making.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <br>
+  <mat-card>
+    <mat-card-title class="textColor" style="text-align: start;"><h2>Discription</h2></mat-card-title>
+    <mat-list>
+      <mat-list-item *ngFor="let description of descriptions">
+        <img matListAvatar [src]="description.img_url">
+        <p matLine>
+          <span class="textColor"> {{description.subject}} </span> <br>
+          <span class="demo-2">{{description.content}} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    
+  </mat-card>

@@ -6,6 +6,7 @@ import { ComparisonComponent } from '../comparison/comparison.component';
 import { UniversityComponent } from '../university/university.component';
 import { PredictionComponent } from '../prediction/prediction.component';
 import { PredictionResultComponent } from '../prediction-result/prediction-result.component';
+import { DegreeDetailsComponent } from '../degree-details/degree-details.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'comparison', component: ComparisonComponent},
   {path: '', redirectTo: '/comparison', pathMatch: 'full'},
   {path: 'university/:name', component: UniversityComponent},
+  {path: 'degree/:name', component: DegreeDetailsComponent},
   {path: 'prediction', component: PredictionComponent},
   {path: '', redirectTo: '/prediction', pathMatch: 'full'},
   {path: 'result', component: PredictionResultComponent},

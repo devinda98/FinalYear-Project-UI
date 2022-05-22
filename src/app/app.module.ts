@@ -41,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PredictionComponent } from './prediction/prediction.component';
 import { PredictionResultComponent } from './prediction-result/prediction-result.component';
 import { PredictionErrorComponent } from './prediction-error/prediction-error.component';
+import { DegreeDetailsComponent } from './degree-details/degree-details.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PredictionErrorComponent } from './prediction-error/prediction-error.co
     PredictionComponent,
     PredictionResultComponent,
     PredictionErrorComponent,
+    DegreeDetailsComponent,
   ],
   imports: [
     BrowserModule,
